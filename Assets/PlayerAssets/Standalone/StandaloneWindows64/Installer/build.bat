@@ -1,0 +1,12 @@
+@ECHO OFF
+
+IF EXIST "%PROGRAMFILES(x86)%\Inno Setup 5" (
+    SET INNOSETUPPATH="%PROGRAMFILES(x86)%\Inno Setup 5"
+) ELSE (
+    ECHO Inno Setup Not Found!
+	EXIT
+)
+
+SET INNOSETUP="%INNOSETUPPATH%\ISCC.exe"
+"%INNOSETUP%" Installer.iss
+CD ..
